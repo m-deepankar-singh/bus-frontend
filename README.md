@@ -1,3 +1,37 @@
+## Technologies/Tools Used
+
+Java 11,
+Intellij Idea for Development,
+Maven Build Tool ,
+JAXB,Swagger Libraries,Springboot with REST API's and 
+Lombok Libraries
+
+## Setup & Run Instructions
+
+mvn clean install - it will build application
+
+mvn spring-boot:run - it will run the application
+
+## Swagger Documentation
+
+http://localhost:9090/atg/swagger-ui.html#/harry-kart-controller
+
+## Future Code Improvements
+
+Can use JDK 17 and other versions and its features to replace if conditions using Optional.ofNullable().ifPresentOrElse() etc
+
+# Harry-Kart
+## Description
+Harry-Kart in a special kind of horse racing.
+
+The horses participating have a base speed, they can run with that speed indefinitely.
+The track is a 1000 meters loop and is divided in lanes, each horse runs on a lane and every lane has the same length.   
+The horses run the first loop at their base speed but at the end of each loop they find a power-up or power-down.
+
+The power-ups/downs are numbers, negative or positive, representing how much the horse speeds up or slows down.
+
+Your task is to compute the top 3 ranking.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
