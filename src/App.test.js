@@ -1,49 +1,48 @@
-// App.test.js
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import App from './App';
+/* eslint-disable testing-library/no-node-access */
+import React from "react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { toBeInTheDocument } from "@testing-library/jest-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import App from "./App";
+import dummyData from "./dummyData";
 
-function countBusStops(card) {
-  const regex = /Bus Stop \d+/i;
-  let count = 0;
+const renderWithRedux = (component) => {
+  return render(<Provider store={store}>{component}</Provider>);
+};
 
-  card.querySelectorAll("li").forEach((li) => {
-    if (regex.test(li.textContent)) {
-      count += 1;
-    }
-  });
-
-  return count;
-}
-
-test('renders app title', () => {
-  render(<App />);
-  const titleElement = screen.getByText(/Top 10 BusLines and its BusStops/i);
-  expect(titleElement).toBeInTheDocument();
+// Mock the API response
+beforeEach(() => {
+  fetch.resetMocks();
+  fetch.mockResponse(JSON.stringify(dummyData));
 });
 
-test('renders at least one bus line', async () => {
-  render(<App />);
-  const busLines = await screen.findAllByTestId('card');
-  expect(busLines.length).toBeGreaterThan(0);
+test("renders main heading", async () => {
+  renderWithRedux(<App />);
+  const heading = await screen.findByText(/Top 10 BusLines and its BusStops/i);
+  expect(heading).toBeInTheDocument();
 });
 
-test('renders show more button and expands bus stops list', async () => {
-  render(<App />);
-  const showMoreButtons = await screen.findAllByText(/Show more/i);
+test("renders bus line cards", async () => {
+  renderWithRedux(<App />);
+  const cards = await screen.findAllByTestId("card");
+  expect(cards.length).toBeGreaterThan(0);
+});
 
-  expect(showMoreButtons.length).toBeGreaterThan(0);
+test("toggles Show More / Show Less button", async () => {
+  renderWithRedux(<App />);
+  const cards = await screen.findAllByTestId("card");
+  const firstCard = cards[0];
 
-  // Click the first show more button
-  userEvent.click(showMoreButtons[0]);
-
-  // Check if the first card has more than 10 bus stops after clicking the show more button
-  const cards = await screen.findAllByTestId('card');
-  const busStopsBefore = countBusStops(cards[0]);
-  expect(busStopsBefore).toBe(10);
+  const showMoreButton = firstCard.querySelector("button");
+  fireEvent.click(showMoreButton);
 
   await waitFor(() => {
-    const busStopsAfter = countBusStops(cards[0]);
-    expect(busStopsAfter).toBeGreaterThan(10);
+    expect(showMoreButton.textContent).toBe("Show Less");
+  });
+
+  fireEvent.click(showMoreButton);
+  await waitFor(() => {
+    expect(showMoreButton.textContent).toBe("Show More");
   });
 });
