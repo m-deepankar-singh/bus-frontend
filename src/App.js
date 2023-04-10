@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { slice } from './slice';
 import { fetchBusLines } from './actions';
 import './App.css';
+import Navbar from './Navbar';
+import image from './sbab.png'
 
 const App = () => {
   const { busLines } = useSelector((state) => state.busLines);
@@ -17,16 +19,18 @@ const App = () => {
   };
 
   return (
+    <div>
+     <Navbar />
     <div className="App">
-      <h1><span className="heading-text">Top 10 BusLines and its BusStops</span></h1>
+      <h1>Top 10 BusLines and its BusStops</h1>
       <div className="cards">
         {busLines.map((line, index) => (
           <div key={index} className="card" data-testid="card">
             
-            <h3><span className="heading-text">Bus Line Number</span> : {line.busLineName}</h3>
+            <h3>Bus Line Number : {line.busLineName}</h3>
 
             <ul>
-              <h4><span className="heading-text">Bus Stop Names</span></h4>
+              <h4>Bus Stop Names</h4>
               {(line.showAllStops ? line.busStopNames : line.busStopNames.slice(0, 10)).map((stop, index) => (
                 <li key={index}>{stop}</li>
               ))}
@@ -40,6 +44,13 @@ const App = () => {
           </div>
         ))}
       </div>
+    </div>
+    <footer className='Footer'>
+        <img src = {image} alt='logo' height={30} width={100}/>
+        <div className='App2'>
+          <p>SBAB Bank AB (publ) Org nr. 556253-7513</p>
+        </div>
+    </footer>
     </div>
   );
 };

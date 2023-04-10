@@ -59,7 +59,7 @@ button {
   font-size: 14px;
   border-radius: 500px;
   overflow: hidden;
-  background: #fda03c;
+  background: #FF620F;
   color: ghostwhite;
  }
  
@@ -96,3 +96,17 @@ button {
   transform: translate3d(100%, 0, 0);
  }
  
+ .Header {
+  font-family: sans-serif;
+  padding: 40px;
+}
+
+.Footer {
+  font-family: sans-serif;
+  padding: 40px;
+  background-color: #f0f0f0;
+}
+
+.App2 {
+  text-align: end;
+}
