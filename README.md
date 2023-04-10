@@ -54,6 +54,19 @@ You can find the API documentation at the following link:
 3. Improve error handling for API calls and display user-friendly messages.
 4. Add more comprehensive test coverage for the application.
 
+## Challenge
+
+The task is to write an application to find out which bus lines that have the most bus stops on their route, and to present the top 10 bus lines in a nice and formatted way in a web browser.
+The web page should show the names of every bus stop for each of the bus lines in the top 10 list.
+There are no requirements how the bus stops are sorted.
+To accomplish the task please use the Trafiklab’s open API (https://www.trafiklab.se/). You can find more information about the specific API on the documentation page: https://www.trafiklab.se/api/sl-hallplatser-och-linjer-2.
+You can register your own account at Trafiklab.
+The data should be automatically gathered from API for each run of the application.
+
+
+
+
+
 
 
 
