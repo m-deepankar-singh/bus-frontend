@@ -8,6 +8,7 @@ A React application that displays the top 10 bus lines and their respective bus 
 - Redux
 - Redux Toolkit
 - React Testing Library
+- Jest
 
 
 ## Setup & Run Instructions
