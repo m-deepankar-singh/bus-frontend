@@ -15,22 +15,22 @@ A React application that displays the top 10 bus lines and their respective bus 
 
 1. Clone the repository:
 
-git clone https://github.com/m-deepankar-singh/bus-frontend.git
+`git clone https://github.com/m-deepankar-singh/bus-frontend.git`
 
 
 2. Change to the project directory:
 
-cd frontend
+`cd frontend`
 
 
 3. Install the dependencies:
 
-npm install
+`npm install`
 
 
 4. Run the development server:
 
-npm start
+`npm start`
 
 
 
@@ -38,7 +38,7 @@ The application will open in your default web browser at `http://localhost:3000`
 
 5. Run tests:
 
-npm test
+`npm test`
 
 
 
@@ -46,7 +46,7 @@ npm test
 
 You can find the API documentation at the following link:
 
-[Swagger API Documentation](http://3.22.116.126:9091/swagger-ui.html#/)
+[Swagger API Documentation](`http://3.22.116.126:9091/swagger-ui.html#/`)
 
 ## Future Code Improvements
 
