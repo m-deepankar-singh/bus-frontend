@@ -46,7 +46,7 @@ The application will open in your default web browser at `http://localhost:3000`
 
 You can find the API documentation at the following link:
 
-[Swagger API Documentation](`http://3.22.116.126:9091/swagger-ui.html#/`)
+[Swagger API Documentation](http://3.22.116.126:9091/swagger-ui.html#/)
 
 ## Future Code Improvements
 
