@@ -10,13 +10,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchBusLines());
-    const refreshInterval = setTimeout(() => {
-      window.location.reload();
-    }, 5 * 60 * 1000);
-
-    return () => {
-      clearTimeout(refreshInterval);
-    };
   }, [dispatch]);
 
   const handleToggleShowAllStops = (index) => {

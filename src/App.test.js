@@ -1,11 +1,12 @@
 /* eslint-disable testing-library/no-node-access */
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+// eslint-disable-next-line no-unused-vars
 import { toBeInTheDocument } from "@testing-library/jest-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import App from "./App";
-import dummyData from "./dummyData";
+import constants from "./constants";
 
 const renderWithRedux = (component) => {
   return render(<Provider store={store}>{component}</Provider>);
@@ -14,7 +15,7 @@ const renderWithRedux = (component) => {
 // Mock the API response
 beforeEach(() => {
   fetch.resetMocks();
-  fetch.mockResponse(JSON.stringify(dummyData));
+  fetch.mockResponse(JSON.stringify(constants));
 });
 
 test("renders main heading", async () => {

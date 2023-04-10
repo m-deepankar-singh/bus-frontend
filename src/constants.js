@@ -1,4 +1,4 @@
-const dummyData = [
+const constants = [
     {
       busLineName: "Line 1",
       busStopNames: [
@@ -44,5 +44,5 @@ const dummyData = [
     
   ];
   
-  export default dummyData;
+  export default constants;
   

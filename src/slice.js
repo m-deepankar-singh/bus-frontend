@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import dummyData from './dummyData';
+import constants from './constants';
 import { fetchBusLines } from './actions';
 
 const initialState = {
@@ -21,7 +21,7 @@ export const slice = createSlice({
         state.busLines = action.payload.map((busLine) => ({ ...busLine, showAllStops: false }));
       })
       .addCase(fetchBusLines.rejected, (state) => {
-        state.busLines = dummyData;
+        state.busLines = constants;
       });
   },
 });
