@@ -4,9 +4,9 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 // eslint-disable-next-line no-unused-vars
 import { toBeInTheDocument } from "@testing-library/jest-dom";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { store } from "./store/store";
 import App from "./App";
-import constants from "./constants";
+import constants from "./constants/constants";
 
 const renderWithRedux = (component) => {
   return render(<Provider store={store}>{component}</Provider>);

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import constants from './constants';
+import constants from '../constants/constants';
 import { fetchBusLines } from './actions';
 
 const initialState = {

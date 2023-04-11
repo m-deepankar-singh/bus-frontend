@@ -1,5 +1,5 @@
 import React from 'react'
-import image from './sbab.png'
+import image from './assets/sbab.png'
 import './App.css'
 const Navbar = () => {
   return (

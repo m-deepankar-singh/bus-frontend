@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { slice } from './slice';
-import { fetchBusLines } from './actions';
+import { slice } from './store/slice';
+import { fetchBusLines } from './store/actions';
 import './App.css';
 import Navbar from './Navbar';
-import image from './sbab.png'
+import image from './assets/sbab.png'
 
 const App = () => {
   const { busLines } = useSelector((state) => state.busLines);
